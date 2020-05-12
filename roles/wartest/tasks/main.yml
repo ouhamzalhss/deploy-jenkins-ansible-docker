@@ -1,0 +1,18 @@
+- name: install pip
+  apt:
+    name: python-pip
+    state: present
+
+- name: pip install docker-py
+  pip:
+    name:
+      - docker
+      - docker-compose
+
+- name: run container
+  docker_container:
+    name: wartest
+    image: "{{ image }}"
+    ports: 8081:8080
+    state: started
+ 

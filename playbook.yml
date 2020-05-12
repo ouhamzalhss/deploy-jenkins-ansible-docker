@@ -1,0 +1,8 @@
+
+- name: install wartest
+  hosts: all
+  become: yes
+  roles:
+    - wartest
+
+
